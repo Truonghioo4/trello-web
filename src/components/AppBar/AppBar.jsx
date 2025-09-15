@@ -6,7 +6,7 @@ import ModeSelect from "../ModeSelect/ModeSelect"
 import AppsIcon from "@mui/icons-material/Apps"
 import { ReactComponent as TrelloLogo } from "../../assets/trello-logo.svg"
 import SvgIcon from "@mui/material/SvgIcon"
-import WorkSpaces from "./Menu/WorkSpaces"
+import WorkSpaces from "./Menu/Workspaces.jsx"
 import Recent from "./Menu/Recent"
 import Started from "./Menu/Started"
 import Templates from "./Menu/Templates"
@@ -34,19 +34,28 @@ const AppBar = () => {
 				paddingX: 2,
 				gap: 2,
 				overflowX: "auto",
-				bgcolor: (theme) => (theme.palette.mode === "dark" ? "#2c3e50" : "#1565c0"),
+				bgcolor: (theme) =>
+					theme.palette.mode === "dark" ? "#2c3e50" : "#1565c0"
 			}}
 		>
 			<Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-				<Link to='/boards' >
+				<Link to="/boards">
 					<Tooltip title="Board List">
-						<AppsIcon sx={{ color: "white", verticalAlign: 'middle'}} />
+						<AppsIcon sx={{ color: "white", verticalAlign: "middle" }} />
 					</Tooltip>
 				</Link>
-				<Link to='/' > 
+				<Link to="/">
 					<Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-						<SvgIcon component={TrelloLogo} inheritViewBox fontSize="small" sx={{ color: "white" }}/>
-						<Typography variant="span" sx={{ fontSize: "1.2rem", fontWeight: "bold", color: "white" }}>
+						<SvgIcon
+							component={TrelloLogo}
+							inheritViewBox
+							fontSize="small"
+							sx={{ color: "white" }}
+						/>
+						<Typography
+							variant="span"
+							sx={{ fontSize: "1.2rem", fontWeight: "bold", color: "white" }}
+						>
 							Trello
 						</Typography>
 					</Box>
@@ -56,7 +65,12 @@ const AppBar = () => {
 					<Recent />
 					<Started />
 					<Templates />
-					<Button sx={{ color: "white", border: "none", "&:hover": { border: "none" } }}
+					<Button
+						sx={{
+							color: "white",
+							border: "none",
+							"&:hover": { border: "none" }
+						}}
 						variant="outlined"
 						startIcon={<LibraryAddIcon />}
 					>
@@ -85,13 +99,13 @@ const AppBar = () => {
 										fontSize="small"
 										sx={{
 											color: searchValue ? "white" : "transparent",
-											cursor: "pointer",
+											cursor: "pointer"
 										}}
 										onClick={() => setSearchValue("")}
 									/>
 								</InputAdornment>
-							),
-						},
+							)
+						}
 					}}
 					sx={{
 						minWidth: 120,
@@ -102,8 +116,8 @@ const AppBar = () => {
 						"& .MuiOutlinedInput-root": {
 							"& fieldset": { borderColor: "white" },
 							"&:hover fieldset": { borderColor: "white" },
-							"&.Mui-focused fieldset": { borderColor: "white" },
-						},
+							"&.Mui-focused fieldset": { borderColor: "white" }
+						}
 					}}
 				/>
 				<ModeSelect />
