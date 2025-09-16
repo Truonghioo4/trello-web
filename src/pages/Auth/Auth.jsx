@@ -23,7 +23,7 @@ function Auth() {
       minHeight: '100vh',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      background: 'url("src/assets/auth/login-register-bg.jpg")',
+      background: 'url("/Auth/login-register-bg.jpg")',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
