@@ -10,5 +10,6 @@ export default defineConfig({
 	plugins: [react(), svgr()],
 	resolve: {
 		alias: [{ find: "~", replacement: "/src" }]
-	}
+	},
+	base: '/', // QUAN TRỌNG khi deploy root domain
 })
