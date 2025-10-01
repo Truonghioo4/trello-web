@@ -1,28 +1,28 @@
-import Box from "@mui/material/Box"
-import Button from "@mui/material/Button"
-import InputAdornment from "@mui/material/InputAdornment"
-import Typography from "@mui/material/Typography"
-import ModeSelect from "../ModeSelect/ModeSelect"
-import AppsIcon from "@mui/icons-material/Apps"
-import { ReactComponent as TrelloLogo } from "~/assets/trello-logo.svg"
-import SvgIcon from "@mui/material/SvgIcon"
-import WorkSpaces from "./Menu/Workspaces.jsx"
-import Recent from "./Menu/Recent"
-import Started from "./Menu/Started"
-import Templates from "./Menu/Templates"
-import TextField from "@mui/material/TextField"
-import Badge from "@mui/material/Badge"
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone"
-import Tooltip from "@mui/material/Tooltip"
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline"
-import Profile from "./Menu/Profile"
-import LibraryAddIcon from "@mui/icons-material/LibraryAdd"
-import SearchIcon from "@mui/icons-material/Search"
-import CloseIcon from "@mui/icons-material/Close"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import InputAdornment from "@mui/material/InputAdornment";
+import Typography from "@mui/material/Typography";
+import ModeSelect from "../ModeSelect/ModeSelect";
+import AppsIcon from "@mui/icons-material/Apps";
+import { ReactComponent as TrelloLogo } from "~/assets/trello-logo.svg";
+import SvgIcon from "@mui/material/SvgIcon";
+import WorkSpaces from "./Menu/Workspaces.jsx";
+import Recent from "./Menu/Recent";
+import Started from "./Menu/Started";
+import Templates from "./Menu/Templates";
+import TextField from "@mui/material/TextField";
+import Badge from "@mui/material/Badge";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import Tooltip from "@mui/material/Tooltip";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import Profile from "./Menu/Profile";
+import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
+import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 const AppBar = () => {
-	const [searchValue, setSearchValue] = useState("")
+	const [searchValue, setSearchValue] = useState("");
 	return (
 		<Box
 			sx={{
@@ -61,11 +61,11 @@ const AppBar = () => {
 					</Box>
 				</Link>
 				<Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
-					<WorkSpaces />
+					{/* <WorkSpaces />
 					<Recent />
 					<Started />
-					<Templates />
-					<Button
+					<Templates /> */}
+					{/* <Button
 						sx={{
 							color: "white",
 							border: "none",
@@ -75,7 +75,7 @@ const AppBar = () => {
 						startIcon={<LibraryAddIcon />}
 					>
 						Create
-					</Button>
+					</Button> */}
 				</Box>
 			</Box>
 			<Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -132,7 +132,7 @@ const AppBar = () => {
 				<Profile />
 			</Box>
 		</Box>
-	)
-}
+	);
+};
 
-export default AppBar
+export default AppBar;

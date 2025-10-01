@@ -19,12 +19,10 @@ import { cloneDeep } from "lodash"
 import { useParams } from "react-router-dom"
 import PageLoadingSpinner from "~/components/Loading/PageLoadingSpinner.jsx"
 import ActiveCard from "~/components/Modal/ActiveCard/ActiveCard.jsx"
-import { selectCurrentActiveCard } from "~/redux/activeCard/activeCardSlice.js"
 const Board = () => {
 	const dispatch = useDispatch()
 	// const [board, setBoard] = useState(null)
 	const board = useSelector(selectCurrentActiveBoard)
-	const activeCard = useSelector(selectCurrentActiveCard)
 	const { boardId } = useParams()
 
 	useEffect(() => {
@@ -101,8 +99,8 @@ const Board = () => {
 	return (
 		<div>
 			<Container disableGutters maxWidth={false} sx={{ height: "100vh" }}>
-				{/* Modal Active Card, check đóng/mở dựa theo điều kiện có tồn tại data activeCard lưu trong Redux hay không thì mới render. Mỗi thời điểm chỉ tồn tại một cái Modal Card đang Active */}
-				{activeCard && <ActiveCard />}
+				{/* Modal Active Card, check đóng/mở dựa theo State isShowModalActiveCard luu trong redux */}
+				<ActiveCard />
 				<AppBar />
 				<BoardBar board={board} />
 				<BoardContent

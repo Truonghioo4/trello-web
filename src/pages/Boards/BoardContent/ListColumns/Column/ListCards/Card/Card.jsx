@@ -10,14 +10,24 @@ import AttachmentIcon from "@mui/icons-material/Attachment"
 import { useSortable } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities"
 import { useDispatch } from "react-redux"
-import { updateCurrentActiveCard } from "~/redux/activeCard/activeCardSlice"
+import {
+	showModalActiveCard,
+	updateCurrentActiveCard
+} from "~/redux/activeCard/activeCardSlice"
 
 const Card = ({ card }) => {
 	const dispatch = useDispatch()
 
-	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+	const {
+		attributes,
+		listeners,
+		setNodeRef,
+		transform,
+		transition,
+		isDragging
+	} = useSortable({
 		id: card?._id,
-		data: { ...card },
+		data: { ...card }
 	})
 
 	const dndKitCardsSytles = {
@@ -25,15 +35,21 @@ const Card = ({ card }) => {
 		transform: CSS.Translate.toString(transform),
 		transition,
 		opacity: isDragging ? 0.5 : undefined,
-		border: isDragging ? "1px solid #2ecc71" : undefined,
+		border: isDragging ? "1px solid #2ecc71" : undefined
 	}
 
 	const shouldShowCardActions = () => {
-		return !!card?.memberIds?.length || !!card?.comments?.length || !!card?.attachments?.length
+		return (
+			!!card?.memberIds?.length ||
+			!!card?.comments?.length ||
+			!!card?.attachments?.length
+		)
 	}
 	const setActiveCard = () => {
 		// Cập nhật data cho active card trong redux
 		dispatch(updateCurrentActiveCard(card))
+		// Hiện modal lên
+		dispatch(showModalActiveCard())
 	}
 	return (
 		<MuiCard
@@ -48,7 +64,7 @@ const Card = ({ card }) => {
 				overflow: "unset",
 				display: card?.FE_PlaceholderCard ? "none" : "block",
 				border: "1px solid transparent",
-				"&:hover": { borderColor: (theme) => theme.palette.primary.main },
+				"&:hover": { borderColor: (theme) => theme.palette.primary.main }
 			}}
 		>
 			{card?.cover && <CardMedia sx={{ height: 140 }} image={card?.cover} />}
